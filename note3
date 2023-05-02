@@ -1,0 +1,26 @@
+Here are some commonly used AWS resources and their Azure equivalents:
+
+EC2 Instances: Azure Virtual Machines (VMs) provide similar functionality as EC2 instances. Azure VMs are available in a wide range of sizes and configurations and support both Windows and Linux operating systems.
+
+S3 Storage: Azure Blob Storage provides similar functionality as Amazon S3. It is a scalable and durable object storage service that allows users to store and retrieve large amounts of unstructured data.
+
+RDS: Azure Database for MySQL, Azure Database for PostgreSQL, and Azure SQL Database provide similar functionality a Amazon RDS. These services provides managed database solutions with high availability, scalability, and security.
+
+Lambda: Azure Functions provides similar functionality as AWS Lambda. It is a serverless compute service that allows users to run code in response to events and triggers.
+
+CloudFront: Azure CDN provides similar functionality as Amazon CloudFront. It is a global content delivery network that enables users to deliver high-bandwidth content to customers around the world.
+
+Elastic Beanstalk: Azure App Service provides similar functionality as AWS Elastic Beanstalk. It is a fully managed platform for building, deploying, and scaling web apps and APIs.
+
+VPC: Azure Virtual Network provides similar functionality as Amazon VPC. It lowsusers to create isolated networksal  and control traffic flow between them.
+
+IAM: Azure Active Directory provides similar functionality as AWS IAM. It is a cloud-based identity and access management service that enables users to control access to resources and applications.
+
+These are just a few examples, and there are many other AWS resources and their Azure equivalents. The specific choice of resources will depend on the needs of the project and the preferences of the user.
+
+
+
+
+
+User
+What are the processes involved in building a github actions CICD pipeline to buil test and 
