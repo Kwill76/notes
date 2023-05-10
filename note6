@@ -44,8 +44,7 @@ Remember to refer to the specific documentation provided by your block storage p
 
 
 
-User
-using the azure disk storage as the option taken, highlight detailed steps on how to add it to my github enterprise account so that the server is up and running and also accessible 
+***using the azure disk storage as the option taken, highlight detailed steps on how to add it to my github enterprise account so that the server is up and running and also accessible 
 ChatGPT
 To add Azure Disk Storage to your GitHub Enterprise server, follow these steps:
 
@@ -224,26 +223,26 @@ By following these steps, you should be able to set up a master node for GitHub 
 
 
 
-To increase the size of your Azure Disk Storage attached to your GitHub Enterprise server, you can follow these steps:
+***To increase the size of your Azure Disk Storage attached to your GitHub Enterprise server, you can follow these steps:
 
-Open Azure Portal: Sign in to the Azure Portal (portal.azure.com) using your Azure account credentials.
+1. Open Azure Portal: Sign in to the Azure Portal (portal.azure.com) using your Azure account credentials.
 
-Locate Disk Storage: Navigate to the Azure Disk Storage resource that is currently attached to your GitHub Enterprise server. You can search for the resource in the search bar at the top of the Azure Portal, or locate it in the appropriate resource group.
+2. Locate Disk Storage: Navigate to the Azure Disk Storage resource that is currently attached to your GitHub Enterprise server. You can search for the resource in the search bar at the top of the Azure Portal, or locate it in the appropriate resource group.
 
-Stop the GitHub Enterprise Server: Before resizing the disk, it is recommended to stop the GitHub Enterprise server to ensure data integrity. Follow the appropriate steps to stop the GitHub Enterprise server based on your operating system and deployment configuration.
+3. Stop the GitHub Enterprise Server: Before resizing the disk, it is recommended to stop the GitHub Enterprise server to ensure data integrity. Follow the appropriate steps to stop the GitHub Enterprise server based on your operating system and deployment configuration.
 
-Resize Disk Storage:
+4. Resize Disk Storage:
 
 In the Azure Portal, go to the overview page of the Azure Disk Storage resource.
 Click on "Configuration" or "Size" in the left-hand menu to access the configuration settings.
 Look for the option to resize the disk or adjust its size. This may be labeled as "Size (GiB)" or similar.
 Increase the size of the disk to your desired capacity. Take note that the new size should be larger than the current disk size to allow for the expansion.
 Save the changes to apply the new disk size.
-Start the GitHub Enterprise Server: Once the disk resize operation is complete, start the GitHub Enterprise server again using the appropriate commands or service management tools for your oeatng system.
 
-Verify Disk Size: After the priserver has started, you can verify the increased disk size by checking the storage configuration in the GitHub Enterprise server settings or through system commands on the server.
+5. Start the GitHub Enterprise Server: Once the disk resize operation is complete, start the GitHub Enterprise server again using the appropriate commands or service management tools for your oeatng system.
+
+6. Verify Disk Size: After the priserver has started, you can verify the increased disk size by checking the storage configuration in the GitHub Enterprise server settings or through system commands on the server.
 
 Please note that increasing the disk size will only expand the storage capacity of the disk. You may need to perform additional steps within the operating system or GitHub Enterprise configuration to make use of the expanded disk space effectively.
-
 Remember to consult the Azure documentation or seek further assistance from Azure support if you encounter any issues or require detailed instructions specific to your Azure Disk Storage configuration.
 
