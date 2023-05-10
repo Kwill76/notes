@@ -49,25 +49,29 @@ using the azure disk storage as the option taken, highlight detailed steps on ho
 ChatGPT
 To add Azure Disk Storage to your GitHub Enterprise server, follow these steps:
 
-Create an Azure Disk Storage Account:
+1. Create an Azure Disk Storage Account:
 
 Sign in to the Azure portal (portal.azure.com).
 Click on "Create a resource" and search for "Disk Storage".
 Select "Disk Storage" from the search results and click "Create".
 Provide the necessary details, such as a unique storage account name, resource group, location, and performance tier.
 Review and accept the terms, then click "Create" to create the Azure Disk Storage account.
-Retrieve Connection Details:
+
+2. Retrieve Connection Details:
 
 Once the Disk Storage account is created, go to its overview page in the Azure portal.
 In the left navigation pane, click on "Access keys" under "Settings".
 Note down the "Key1" or "Key2" and the corresponding "Connection string." You will need these later to configure access to the storage account.
-Prepare the GitHub Enterprise Server:
+
+3. Prepare the GitHub Enterprise Server:
 
 Ensure that your GitHub Enerprise server is powered off or in a safe statet for maintenance. Take appropriate backups and snapshots of your server to avoid data loss.
-Attach the Azure Disk Storage to the GitHub Enterprise Server:
+
+4. Attach the Azure Disk Storage to the GitHub Enterprise Server:
 
 Depending on whether your GitHub Enterprise server is running on a virtual machine or physical server, follow the appropriate steps:
-For GitHub Enterprise on a Virtual Machine:
+
+a. For GitHub Enterprise on a Virtual Machine:
 
 Access the Azure portal and navigate to your virtual machine that hosts GitHub Enterprise.
 Stop the virtual machine to prepare for disk attachment.
@@ -75,18 +79,20 @@ In the virtual machine's settings, navigate to "Disks" or "Disk management".
 Click on "Attach existing disks" or "Add data disk".
 Choose the Azure Disk Storage account you created earlier and select the desired disk to attach.
 Save the changes and start the virtual machine.
-For GitHub Enterprise on a Physical Server:
+
+b. For GitHub Enterprise on a Physical Server:
 
 Connect the Azure Disk Storage device to the server following the appropriate hardware connection methods.
 Depending on your server's configuration, you may need to install any necessary drivers or software provided by Azure to recognize the disk storage device.
 Once the disk storage device is connected and recognized by the server, proceed to the next step.
-Configure the Azure Disk Storage on the GitHub Enterprise Server:
+
+5. Configure the Azure Disk Storage on the GitHub Enterprise Server:
 
 Connect to your GitHub Enterprise server either via SSH or console access.
 
 On the server:
 
-For Linux-based systems:
+a. For Linux-based systems:
 
 Identify the newly attached disk storage device using the lsblk or fdisk -l command. It will be listed as a new disk device, such as /dev/sdc.
 Create a partition on the disk using fdisk or parted.
@@ -95,45 +101,40 @@ Create a mount point directory (e.g., /mnt/github-storage).
 Update the /etc/fstab file to automatically mount the device at boot, using the appropriate device path and mount point.
 Mount the disk storage device manually for the current session using the mount command.
 Ensurethe mounted storage is accessible and writa ble by verifying its permissions.
-For Windows Server:
+
+b. For Windows Server:
 
 Open Disk Management by pressing Win + X and selecting "Disk Management".
 Initialize the newly attached disk if prompted.
 Create a partition on the disk and format it with a suitable file system (e.g., NTFS).
 Assign a drive letter to the newly created partition.
 Ensure the disk is accessible and visible in File Explorer.
-Update GitHub Enterprise Configuration:
 
-Identify the GitHub Enterprise
-
-
-
-
-User
-continue
-ChatGPT
-Update GitHub Enterprise Configuration:
+6. Update GitHub Enterprise Configuration:
 
 Identify the GitHub Enterprise configuration file. On a Linux-based system, it is typically located at /etc/github-enterprise/github-enterprise.yml.
 Open the configuration file using a text editor.
 Look for the data_dir or storage configuration option, which specifies the data storage location.
 Update the value of the data_dir or storage option to point to the mount point or drive letter assigned to the Azure Disk Storage. For example:
+
 javascript
 Copy code
 data_dir: /mnt/github-storage
 Save the changes to the configuration file.
-Start GitHub Enterprise Server:
+
+7. Start GitHub Enterprise Server:
 
 Start the GitHub Enterprise server using the appropriate commands or service management tools for your operating system. For example, on a Linux-based system, you might use:
 sql
 Copy code
 sudo ghe-start
-Test Accessibility:
+8. Test Accessibility:
 
 Once the GitHub Enterprise server has started, perform tests to ensure it is accessible and functioning correctly.
 Open a web browser and enter the URL or IP address of your GitHub Enterprise instance.
 Verify that you can access the GitHub Enterprise web interface and perform actions like creating repositories, pushing code, and accessing existing repositories.
 Additionally, test repository cloning, pushing, and pulling operations using Git commands from local development environments.
+
 By following these steps, you should be able to add Azure Disk Storage to your GitHub Enterprise server and have it up and running, with the data accessible via the configured storage location. Remember to refer to Azure documentation or GitHub Enterprise documentation for any platform-specific details or updates specific to your version of GitHub Enterprise.
 
 
