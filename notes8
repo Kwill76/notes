@@ -1,0 +1,43 @@
+how do i add a blob storage to my github Enterprise server hosted on azure platform
+ChatGPT
+To add Blob storage to your GitHub Enterprise Server hosted on the Azure platform, you can follow these steps:
+
+Create a Storage Account: In the Azure portal (portal.azure.com), navigate to the Azure Storage section and create a new storage account. Provide the necessary details, such as storage account name, deployment model (standard or premium), replication type, and other configuration options. Choose the appropriate settings based on your requirements.
+
+Configure Blob Storage: Once the storage account is created, navigate to the storage account's overview page. From there, locate the "Blob service" section or the "Containers" tab. Create a new container within the storage account to store your GitHub Enterprise Server data. Specify the container name and set the appropriate access level (e.g., private, public read access, or custom access policy).
+
+Retrieve Connection String: To connect GitHub Enterprise Server to the Blob storage, you need to obtain the connection string for the storage account. In the Azure portal, navigate to the storage account's overview page. Look for the "Access keys" or "Settings" section and click on it. Retrieve the connection string from the available options. You will need this connection string in the next steps.
+
+Access GitHub Enterprise Server Configuration: Access your GitHub Enterprise Server instance, either through the web interface or via remote access (e.g., Remote Desktop), and navigate to the server configuration area.
+
+Configure Blob Storage in GitHub Enterprise Server: In the GitHub Enterprise Server configuration, find the settings related to storage or object storage. Specify the connection details for the Blob storage using the connection string obtained in Step 3. This may involve providing the storage account name, access key, container name, and other relevant information.
+
+Save and Apply Configuration: Save the configuration changes in GitHub Enterprise Server. The server will establish a connection to the Blob storage using the provided details.
+
+By following these steps, you can add Blob storage to your GitHub Enterprise Server hosted on the Azure platform. This allows you to store your GitHub data, including repositories, metadata, and artifacts, in the Blob storage. Make sure to review the documentation and guidelines provided by GitHub for configuring storage options specific to GitHub Enterprise Server.
+
+
+
+
+
+User
+explain item 5 further
+ChatGPT
+Certainly! Step 5 involves configuring Blob storage in GitHub Enterprise Server by providing the connection details obtained from the Azure portal. Here's a more detailed explanation:
+
+Access GitHub Enterprise Server Configuration: Log in to your GitHub Enterprise Server instance through the web interface or via remote access (e.g., Remote Desktop). Make sure you have administrative access or appropriate privileges to access the server configuration.
+
+Locate Storage Settings: In the GitHub Enterprise Server administration settings, look for the storage-related settings or options. This may vary depending on the version and configuration of GitHub Enterprise Server you are using.
+
+Specify Blob Storage Connection Details: Within the storage settings, you'll typically find fields to provide the connection details for Blob storage. Here are the commo connyou'll need to provide:
+
+Stnection details orage Account Name: Enter the name of the Azure storage account you created in Step 1.
+Access Key: Paste the access key associated with the storage account. You can obtain this from the Azure portal in the "Access keys" or "Settings" section of your storage account.
+Container Name: Enter the name of the container you created within the storage account in Step 2.
+Save and Apply Configuration: After providing the necessary connection details, save the configuration changes in GitHub Enterprise Server. This will trigger the server to establish a connection to the Blob storage using the provided information.
+
+GitHub Enterprise Server will now use the Blob storage for storing repositories, metadata, and other data associated with your GitHub instance.
+
+Note that the specific steps and terminology may vary slightly depending on the version of GitHub Enterprise Server you are using. It's recommended to refer to the official documentation for your specific GitHub Enterprise Server version for detailed instructions on configuring storage settings.
+
+By following these steps, you can successfully configure Blob storage for your GitHub Enterprise Server hosted on the Azure platform, allowing you to store and manage your GitHub data in Azure Blob storage.
