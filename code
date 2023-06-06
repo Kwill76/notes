@@ -6,3 +6,8 @@ try {
         Write-Host "Inner exception: $($exception.InnerException.Message)"
     }
 }
+
+
+$certificatePath = "C:\Path\to\certificate.cer"  # Path to the certificate file
+
+Import-Certificate -FilePath $certificatePath -CertStoreLocation Cert:\LocalMachine\Root
