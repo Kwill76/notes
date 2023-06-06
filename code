@@ -1,0 +1,8 @@
+try {
+    # Your code that triggers the SSL connection error
+} catch [System.Net.Http.HttpRequestException] $exception {
+    Write-Host "An error occurred: $($exception.Message)"
+    if ($exception.InnerException) {
+        Write-Host "Inner exception: $($exception.InnerException.Message)"
+    }
+}
