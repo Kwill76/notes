@@ -1,13 +1,18 @@
-try {
-    # Your code that triggers the SSL connection error
-} catch [System.Net.Http.HttpRequestException] $exception {
-    Write-Host "An error occurred: $($exception.Message)"
-    if ($exception.InnerException) {
-        Write-Host "Inner exception: $($exception.InnerException.Message)"
-    }
-}
+name: Demo Workflow
 
+on:
+  push:
+    branches:
+      - main
 
-$certificatePath = "C:\Path\to\certificate.cer"  # Path to the certificate file
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-Import-Certificate -FilePath $certificatePath -CertStoreLocation Cert:\LocalMachine\Root
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run script
+        run: |
+          echo "Hello, world!"
