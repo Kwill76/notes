@@ -1,4 +1,8 @@
 name: Demo Workflow
+- name: Run command with self-signed certificate
+  run: |
+    curl --cacert /path/to/self_signed_certificate.pem https://example.com
+
 
 on:
   push:
