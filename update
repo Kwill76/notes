@@ -1,3 +1,10 @@
 $ cd /opt/github/actions-runner/2.289.3/
 $ export NODE_EXTRA_CA_CERTS="/etc/pki/ca-trust/source/anchors/org-ca.crt"
 $ ./run.sh
+
+
+C:\> cd C:\actions-runner\2.289.3
+C:\actions-runner\2.289.3> set NODE_EXTRA_CA_CERTS=C:\path\to\org-ca.crt
+C:\actions-runner\2.289.3> .\config.cmd
+C:\actions-runner\2.289.3> .\run.cmd
+
