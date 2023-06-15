@@ -34,3 +34,4 @@ Offending ED25519 key in /c/Users/sysnt/.ssh/known_hosts:2
 Host key for [10.155.129.230]:122 has changed and you have requested strict checking.
 Host key verification failed.
 
+[System.Environment]::SetEnvironmentVariable($GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY, $GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY_VALUE, [System.EnvironmentVariableTarget]::User)
