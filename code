@@ -35,3 +35,5 @@ Host key for [10.155.129.230]:122 has changed and you have requested strict chec
 Host key verification failed.
 
 [System.Environment]::SetEnvironmentVariable($GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY, $GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY_VALUE, [System.EnvironmentVariableTarget]::User)
+
+[System.Environment]::SetEnvironmentVariable($NODE_EXTRA_CA_CERTS, $NODE_EXTRA_CA_CERTS_VALUE, [System.EnvironmentVariableTarget]::Machine)
