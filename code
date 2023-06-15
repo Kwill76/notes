@@ -37,3 +37,8 @@ Host key verification failed.
 [System.Environment]::SetEnvironmentVariable($GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY, $GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY_VALUE, [System.EnvironmentVariableTarget]::User)
 
 [System.Environment]::SetEnvironmentVariable($NODE_EXTRA_CA_CERTS, $NODE_EXTRA_CA_CERTS_VALUE, [System.EnvironmentVariableTarget]::Machine)
+
+
+$GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY = "GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY"
+$GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY_VALUE = "1" 
+$NODE_EXTRA_CA_CERTS_VALUE = "C:\actions-runner-230\10-155-129-230.crt"
