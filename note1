@@ -21,6 +21,82 @@ Use testing and validation: Test and validate your workflows in a development en
 Use documentation: Document your workflows and configuration files to make it easier for other developers to understand and contribute to your workflows. This can also make it easier to troubleshoot issues and resolve problems.
 
 
+Patch management best practices!
 
+
+Patch management is an essential practice for maintaining the security and stability of Windows Server environments. Here are some best practices for Windows Server patching:
+
+Regular Patching: Establish a regular patching schedule to ensure that Windows Server updates are applied in a timely manner. This schedule may vary depending on the criticality of the systems, but it is generally recommended to install patches at least once a month.
+
+Test in Non-Production Environment: Before deploying patches to production servers, it's important to test them in a non-production environment. This helps identify any compatibility issues, conflicts, or unexpected behavior that could arise from applying the updates. Testing allows you to validate the patches and ensure they won't adversely impact your production environment.
+
+Prioritize Critical and Security Updates: Focus on applying critical and security updates first. These updates address vulnerabilities that could be exploited by attackers. Microsoft typically releases security updates on the second Tuesday of each month, known as "Patch Tuesday." Promptly install these updates to address any known security risks.
+
+Use a Patch Management System: Consider implementing a patch management system or utilizing Microsoft's Windows Server Update Services (WSUS) to automate the patching process. These tools help streamline the distribution and installation of patches across multiple servers, making the process more efficient and manageable.
+
+Monitor and Track Patch Status: Maintain visibility into the patching status of your Windows Servers. Regularly monitor and track the installation of updates to ensure that patches are being applied successfully and any issues are addressed promptly. This helps ensure that your servers are up to date and protected against known vulnerabilities.
+
+Backup Before Patching: Before applying patches, create a backup of critical data and system configurations. This provides a recovery point in case any issues arise during the patching process. In the event of a problem, you can roll back the changes and restore the system to its previous state.
+
+Maintain Server Documentation: Keep detailed documentation of your server configurations, including patching schedules, applied updates, and any issues encountered during the patching process. This documentation helps with troubleshooting, auditing, and ensuring compliance with regulatory requirements.
+
+Stay Informed: Stay updated on Microsoft's patch releases, security advisories, and best practices. Regularly review security bulletins, release notes, and other relevant information to stay informed about new patches and their impact on your Windows Server environment.
+
+By following these best practices, you can ensure that your Windows Server environment remains secure, stable, and protected against known vulnerabilities.
+
+
+
+
+WIZ FINDINGS 06/14   Last 3 days, 24/10/506/904/737/634/602
+
+Majority of the new vulneranbility findings are on the OS version and first detected yesterday
+I had since wednesday the 14th started the remediation and also carrying out some audit. 
+
+I am doing an audit of our team resources on Azure.(25).To promptly delete resources we dont require and also seek to
+understand if that can sync with wiz in real time or at least same day.
+
+I have noticed some resources that have been deleted but still showing on the wiz report. does the report capture assets based on 
+the names or ip address?
+
+Total VMs we have under our az-n-architect subscription is 25, 3 currently deallocated, I will look into 2,
+the 3rd one was my doing....
+
+XD- 6206
+
+
+206 - 
+
+236 - deleted
+208 - done
+206 - done
+202 - beyond compare/ internet connectivity
+205 - done
+200 - done
+164
+238 - done 
+235 - done
+171 - done(checkback)
+214 - done(checkback)
+233 - done
+234 - done
+134 - connection was denied because user account is not authorized for remote login
+132, now 133, after comparing asset name Azure resource - connection was denied because user account is not authorized for remote login
+199.48 - No login details \sysnt and checkfree\fead wont work
+199.44 - beyond compare / internet connectivity
+199.5 - beyond compare / internet connectivity
+199.4 - beyond compare
+199.38 - beyond compare/ internet connectivity
+199.69 - connection was denied because user account is not authorized for remote login
+199.68 - connection was denied because user account is not authorized for remote login
+199.72
+
+Total resources we have under our az-n-architect subscription is 25, 3 currently deallocated, i will look into 2,
+the 3rd one was my doing....
+
+Tanium vulnerabilities have been identified as a vendor issue and has never been my/our resposibility. There is an exception whitelist for Tanium.
+Linux/GHE is meant to be maintained by microsoft updates and not on our own, we are prevented from running updates.
+
+
+Microfocus orchestration - deployed unto vm vmss 
 
 
