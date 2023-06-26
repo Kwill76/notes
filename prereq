@@ -44,3 +44,35 @@ Wait for installation: The installer will now download and install the selected 
 Complete the installation: After the installation is complete, you'll see a message indicating that the installation was successful. Click on the "Finish" button to exit the installer.
 
 After completing these steps, the WiX Toolset will be installed on your machine. You can now use WiX to create Windows Installer packages (MSI) for your applications. To verify the installation, you can open a command prompt and run candle or light commands, which are part of the WiX Toolset, to confirm that they are recognized and functioning correctly.
+
+
+
+To install Git on a Windows virtual machine (VM), follow these steps:
+
+Download Git: Go to the official Git website at https://git-scm.com/ and click on the "Download" button to download the Git installer for Windows.
+
+Run the Git installer: Once the installer is downloaded, locate the executable file (e.g., Git-2.x.x.x-64-bit.exe) and run it to launch the Git installer.
+
+Choose the installation options: In the Git installer, you'll be presented with various installation options. Leave the default options selected unless you have specific preferences. You can choose to modify the installation location, select components to install, and configure integration options. Click on the "Next" button to proceed.
+
+Select the components: In this step, you can select additional components to install, such as Git GUI, Git Bash, and Git Credential Manager. If you're unsure, you can leave the default options selected. Click on the "Next" button to continue.
+
+Choose the default editor: Git allows you to configure a default editor for commit messages and other operations. You can select the editor of your choice from the available options or leave the default selection. Click on the "Next" button to proceed.
+
+Choose the default branch name: Git uses "master" as the default branch name, but you can choose a different name if desired. You can also choose whether to enable file system caching. Click on the "Next" button to continue.
+
+Configure the PATH environment: In this step, you can choose how Git is added to the system's PATH environment variable. It is recommended to select the option "Git from the command line and also from 3rd-party software" to ensure Git is accessible from the command prompt and other applications. Click on the "Next" button to proceed.
+
+Choose the HTTPS transport backend: Git allows you to choose between the default OpenSSL library or the Windows Secure Channel (SChannel) library for HTTPS connections. Leave the default option selected unless you have specific requirements. Click on the "Next" button to continue.
+
+Configure line ending conversions: Git provides options for line ending conversions. The default option "Checkout Windows-style, commit Unix-style line endings" is suitable for most cases. Click on the "Next" button to proceed.
+
+Choose the terminal emulator: You can choose between the default Windows Command Prompt or a custom terminal emulator like Git Bash. Select the option that suits your preference. Click on the "Next" button to continue.
+
+Install Git: Review the installation summary, and if everything looks correct, click on the "Install" button to start the installation process.
+
+Wait for installation: The Git installer will now install Git and any selected components on your Windows VM. The installation time may vary depending on your system's performance.
+
+Complete the installation: Once the installation is complete, you'll see a confirmation message. Ensure the "Launch Git Bash" option is selected if you want to open Git Bash immediately. Click on the "Finish" button to exit the installer.
+
+After following these steps, Git will be installed on your Windows VM. You can open the Command Prompt or Git Bash and use Git commands to manage your repositories. Remember to configure your Git identity using git config commands before making commits.
