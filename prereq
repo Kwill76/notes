@@ -138,3 +138,5 @@ The Virtual Machine Management Service failed to start the virtual machine 'Dock
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at Docker.Engines.Engines.<StartAsync>d__24.MoveNext() in C:\workspaces\PR-22253\src\github.com\docker\pinata\win\src\Docker.Engines\Engines.cs:line 124
+
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
