@@ -112,3 +112,29 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 error during connect: in the default daemon configuration on Windows, the docker client must be run with elevated privileges to connect: Get "http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/version": open //./pipe/docker_engine: The system cannot find the file specified.
 
 {"code":"DeploymentFailed","target":"/subscriptions/cfa57d0f-4781-45be-835b-21d03891468e/resourceGroups/rg-image-architect-poc-cus/providers/Microsoft.Resources/deployments/CreateVm-GHE_Runner_Win2019-Architect-Core-20230626104443","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-deployment-operations for usage details.","details":[{"code":"ResourceDeploymentFailure","target":"/subscriptions/cfa57d0f-4781-45be-835b-21d03891468e/resourceGroups/rg-image-architect-poc-cus/providers/Microsoft.Compute/virtualMachines/l7wd2arcglr0002","message":"The resource write operation failed to complete successfully, because it reached terminal provisioning state 'Failed'."}]}
+
+
+System.Exception:
+starting Hyper-V VM: status code not OK but 500: Unhandled exception: job failed with message: 'DockerDesktopVM' failed to start. (Virtual machine ID E4A7A01F-AE14-4F3B-AD8A-2E4FA2557056)
+
+The Virtual Machine Management Service failed to start the virtual machine 'DockerDesktopVM' because one of the Hyper-V components is not running (Virtual machine ID E4A7A01F-AE14-4F3B-AD8A-2E4FA2557056).
+   at Docker.Engines.LinuxHyperVEngine.<DoStartAsync>d__13.MoveNext() in C:\workspaces\PR-22253\src\github.com\docker\pinata\win\src\Docker.Engines\LinuxHyperVEngine.cs:line 60
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Docker.ApiServices.StateMachines.TaskExtensions.<WrapAsyncInCancellationException>d__0.MoveNext() in C:\workspaces\PR-22253\src\github.com\docker\pinata\win\src\Docker.ApiServices\StateMachines\TaskExtensions.cs:line 29
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Docker.ApiServices.StateMachines.StartTransition.<DoRunAsync>d__7.MoveNext() in C:\workspaces\PR-22253\src\github.com\docker\pinata\win\src\Docker.ApiServices\StateMachines\StartTransition.cs:line 79
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Docker.ApiServices.StateMachines.StartTransition.<DoRunAsync>d__7.MoveNext() in C:\workspaces\PR-22253\src\github.com\docker\pinata\win\src\Docker.ApiServices\StateMachines\StartTransition.cs:line 108
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Docker.ApiServices.StateMachines.EngineStateMachine.<StartAsync>d__17.MoveNext() in C:\workspaces\PR-22253\src\github.com\docker\pinata\win\src\Docker.ApiServices\StateMachines\EngineStateMachine.cs:line 97
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Docker.Engines.Engines.<StartAsync>d__24.MoveNext() in C:\workspaces\PR-22253\src\github.com\docker\pinata\win\src\Docker.Engines\Engines.cs:line 124
