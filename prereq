@@ -140,3 +140,6 @@ The Virtual Machine Management Service failed to start the virtual machine 'Dock
    at Docker.Engines.Engines.<StartAsync>d__24.MoveNext() in C:\workspaces\PR-22253\src\github.com\docker\pinata\win\src\Docker.Engines\Engines.cs:line 124
 
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+The Virtual Machine Management Service failed to start the virtual machine 'DockerDesktopVM' because one of the Hyper-V components is not running (Virtual machine ID 1970603F-FFB3-4929-97F5-40BE30A0455A).
+   at Docker.Engines.LinuxHyperVEngine.<DoStartAsync>d__13.MoveNext() in C:\workspaces\PR-22253\src\github.com\docker\pinata\win\src\Docker.Engines\LinuxHyperVEngine.cs:line 60
