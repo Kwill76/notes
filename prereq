@@ -143,3 +143,44 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 
 The Virtual Machine Management Service failed to start the virtual machine 'DockerDesktopVM' because one of the Hyper-V components is not running (Virtual machine ID 1970603F-FFB3-4929-97F5-40BE30A0455A).
    at Docker.Engines.LinuxHyperVEngine.<DoStartAsync>d__13.MoveNext() in C:\workspaces\PR-22253\src\github.com\docker\pinata\win\src\Docker.Engines\LinuxHyperVEngine.cs:line 60
+
+
+
+
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/C:/Users/sysnt/nexus-iq-cli.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+
+
+
+[ERROR] The IQ Server https://lifecycle.1dc.com could not be contacted: Connect to 10.203.92.70:8080 [/10.203.92.70] failed: Connect timed out
+[ERROR] Error details below:
+org.apache.http.conn.ConnectTimeoutException: Connect to 10.203.92.70:8080 [/10.203.92.70] failed: Connect timed out
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+        at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+        at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:401)
+        at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+        at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+        at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+        at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+        at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+        at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+        at com.sonatype.insight.client.utils.AbstractClientBuilder$RequestBuilder.execute(AbstractClientBuilder.java:172)
+        at com.sonatype.insight.client.utils.AbstractClientBuilder$RequestBuilder.get(AbstractClientBuilder.java:105)
+        at com.sonatype.insight.brain.client.ConfigurationClient.validateServerVersion(ConfigurationClient.java:151)
+        at com.sonatype.insight.brain.client.RestClientFactory$RestClient.validateServerVersion(RestClientFactory.java:165)
+        at com.sonatype.insight.scan.cli.AbstractPolicyEvaluator.validateServerVersion(AbstractPolicyEvaluator.java:337)
+        at com.sonatype.insight.scan.cli.AbstractPolicyEvaluator.validate(AbstractPolicyEvaluator.java:87)
+        at com.sonatype.insight.scan.cli.AbstractPolicyEvaluator.run(AbstractPolicyEvaluator.java:68)
+        at com.sonatype.insight.scan.cli.PolicyEvaluator.run(PolicyEvaluator.java:112)
+        at com.sonatype.insight.scan.cli.PolicyEvaluatorCli.run(PolicyEvaluatorCli.java:56)
+        at com.sonatype.insight.scan.cli.PolicyEvaluatorCli.main(PolicyEvaluatorCli.java:47)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+        at java.base/java.net.SocksSocketImpl.readSocksReply(SocksSocketImpl.java:139)
+        at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:455)
+        at java.base/java.net.Socket.connect(Socket.java:608)
+        at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+        at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+        ... 18 common frames omitted
