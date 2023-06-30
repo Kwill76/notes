@@ -185,3 +185,7 @@ Caused by: java.net.SocketTimeoutException: Connect timed out
         at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
         at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
         ... 18 common frames omitted
+
+
+Add-AppxPackage: The 'Add-AppxPackage' command was found in the module 'Appx', but the module could not be loaded due to the following error: [Operation is not supported on this platform. (0x80131539)]
+For more information, run 'Import-Module Appx'.
