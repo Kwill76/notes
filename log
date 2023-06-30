@@ -1,0 +1,124 @@
+Current version information:
+RELEASE_VERSION="3.9.0"
+RELEASE_PLATFORM="azure"
+
+RELEASE_BUILD_ID="0e848118a5"
+RELEASE_BUILD_DATE="2023-06-21T17:27:46Z"
+1. Testing Upload content : Failed
+
+
+Error Details
+============================================
+Microsoft.Azure.Storage.StorageException: Name or service not known (l7xd4arcgitsa01.blob.core.windows.net:443)
+ ---> System.Net.Http.HttpRequestException: Name or service not known (l7xd4arcgitsa01.blob.core.windows.net:443)
+ ---> System.Net.Sockets.SocketException (0xFFFDFFFF): Name or service not known
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T](RESTCommand`1 cmd, IRetryPolicy policy, OperationContext operationContext, CancellationToken token)
+   --- End of inner exception stack trace ---
+   at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T](RESTCommand`1 cmd, IRetryPolicy policy, OperationContext operationContext, CancellationToken token)
+   at Microsoft.Azure.Storage.Blob.CloudBlockBlob.UploadFromStreamAsyncHelper(Stream source, Nullable`1 length, AccessCondition accessCondition, BlobRequestOptions options, OperationContext operationContext, AggregatingProgressIncrementer progressIncrementer, CancellationToken cancellationToken)
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProviderBase.<>c__DisplayClass59_1.<<PutStreamSingleChunkAsync>b__2>d.MoveNext() in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlobProviderBase.cs:line 1222
+--- End of stack trace from previous location ---
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProviderBase.<>c__DisplayClass59_1.<<PutStreamSingleChunkAsync>b__2>d.MoveNext() in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlobProviderBase.cs:line 1231
+--- End of stack trace from previous location ---
+   at Microsoft.TeamFoundation.Common.RetryManager.InvokeAsync(Func`1 actionAsync) in /mnt/_work/1/s/Vssf/Client/TFCommon/RetryManager.cs:line 128
+   at Microsoft.TeamFoundation.Common.RetryManager.InvokeAsync(Func`1 actionAsync) in /mnt/_work/1/s/Vssf/Client/TFCommon/RetryManager.cs:line 137
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProviderBase.<>c__DisplayClass59_0.<<PutStreamSingleChunkAsync>b__0>d.MoveNext() in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlobProviderBase.cs:line 1213
+--- End of stack trace from previous location ---
+   at Microsoft.VisualStudio.Services.CircuitBreaker.CommandAsync.ExecuteAsync(Func`1 run, Func`1 fallback) in /mnt/_work/1/s/Vssf/Client/Common/CircuitBreaker/Command.cs:line 201
+   at Microsoft.VisualStudio.Services.CircuitBreaker.CommandAsync.ExecuteAsync(Func`1 run, Func`1 fallback) in /mnt/_work/1/s/Vssf/Client/Common/CircuitBreaker/Command.cs:line 245
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProviderBase.PutStreamSingleChunkAsync(IVssRequestContext requestContext, String containerId, String resourceId, Stream content, Int64 position, IDictionary`2 metadata, Nullable`1 clientTimeout) in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlobProviderBase.cs:line 1257
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProviderBase.PutStreamAsync(IVssRequestContext requestContext, String containerId, String resourceId, Stream content, IDictionary`2 metadata, Nullable`1 clientTimeout) in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlobProviderBase.cs:line 1148
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProviderBase.PutStreamAsync(IVssRequestContext requestContext, Guid containerId, String resourceId, Stream content, IDictionary`2 metadata, Nullable`1 clientTimeout) in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlobProviderBase.cs:line 1118
+   at Microsoft.VisualStudio.Services.PowerShell.Cmdlets.TestStorageConnectionCmdlet.TryUploadContentAsync(IVssRequestContext requestContext, IBlobProvider provider, Guid containerName, String testFileName, String testFileContent) in /mnt/_work/1/s/Vssf/SdkTools/PowerShell/Cmdlets/TestStorageConnectionCmdlet.cs:line 332
+Request Information
+RequestID:
+RequestDate:
+StatusMessage:
+ErrorCode:
+
+============================================
+
+5. Testing MultiPart Upload content : Failed
+
+
+Error Details
+============================================
+Microsoft.Azure.Storage.StorageException: Name or service not known (l7xd4arcgitsa01.blob.core.windows.net:443)
+ ---> System.Net.Http.HttpRequestException: Name or service not known (l7xd4arcgitsa01.blob.core.windows.net:443)
+ ---> System.Net.Sockets.SocketException (0xFFFDFFFF): Name or service not known
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|281_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionAsync(Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T](RESTCommand`1 cmd, IRetryPolicy policy, OperationContext operationContext, CancellationToken token)
+   --- End of inner exception stack trace ---
+   at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T](RESTCommand`1 cmd, IRetryPolicy policy, OperationContext operationContext, CancellationToken token)
+   at Microsoft.Azure.Storage.Blob.CloudBlockBlob.PutBlockAsync(String blockId, Stream blockData, Checksum contentChecksum, AccessCondition accessCondition, BlobRequestOptions options, OperationContext operationContext, AggregatingProgressIncrementer progressIncrementer, CancellationToken cancellationToken)
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProvider.PutChunksAsync(IVssRequestContext requestContext, CloudBlobContainer container, ICloudBlob blob, Byte[] contentBlock, Int32 contentBlockLength, Int64 compressedLength, Int64 offset, Boolean isLastChunk, IDictionary`2 metadata, Nullable`1 clientTimeout) in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlockBlobProvider.cs:line 102
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProviderBase.PutChunkAsync(IVssRequestContext requestContext, CloudBlobContainer container, ICloudBlob blob, Byte[] contentBlock, Int32 contentBlockLength, Int64 compressedLength, Int64 offset, Boolean isLastChunk, IDictionary`2 metadata, Nullable`1 clientTimeout) in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlobProviderBase.cs:line 1476
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProviderBase.<>c__DisplayClass62_1.<<PutChunkAsync>b__1>d.MoveNext() in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlobProviderBase.cs:line 1399
+--- End of stack trace from previous location ---
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProviderBase.<>c__DisplayClass62_1.<<PutChunkAsync>b__1>d.MoveNext() in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlobProviderBase.cs:line 1407
+--- End of stack trace from previous location ---
+   at Microsoft.TeamFoundation.Common.RetryManager.InvokeAsync(Func`1 actionAsync) in /mnt/_work/1/s/Vssf/Client/TFCommon/RetryManager.cs:line 128
+   at Microsoft.TeamFoundation.Common.RetryManager.InvokeAsync(Func`1 actionAsync) in /mnt/_work/1/s/Vssf/Client/TFCommon/RetryManager.cs:line 137
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProviderBase.<>c__DisplayClass62_0.<<PutChunkAsync>b__0>d.MoveNext() in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlobProviderBase.cs:line 1392
+--- End of stack trace from previous location ---
+   at Microsoft.VisualStudio.Services.CircuitBreaker.CommandAsync.ExecuteAsync(Func`1 run, Func`1 fallback) in /mnt/_work/1/s/Vssf/Client/Common/CircuitBreaker/Command.cs:line 201
+   at Microsoft.VisualStudio.Services.CircuitBreaker.CommandAsync.ExecuteAsync(Func`1 run, Func`1 fallback) in /mnt/_work/1/s/Vssf/Client/Common/CircuitBreaker/Command.cs:line 245
+   at Microsoft.TeamFoundation.Framework.Hosting.AzureProviderBase.PutChunkAsync(IVssRequestContext requestContext, Guid containerId, String resourceId, Byte[] contentBlock, Int32 contentBlockLength, Int64 compressedLength, Int64 offset, Boolean isLastChunk, IDictionary`2 metadata, Nullable`1 clientTimeout) in /mnt/_work/1/s/Vssf/Sdk/CloudServer/AzureBlobProvider/AzureBlobProviderBase.cs:line 1428
+   at Microsoft.VisualStudio.Services.PowerShell.Cmdlets.TestStorageConnectionCmdlet.TryMultiPartUploadContentAsync(IVssRequestContext requestContext, IBlobProvider provider, Guid containerName, String testFileName, String partContent) in /mnt/_work/1/s/Vssf/SdkTools/PowerShell/Cmdlets/TestStorageConnectionCmdlet.cs:line 362
+Request Information
+RequestID:
+RequestDate:
+StatusMessage:
+ErrorCode:
+
+============================================
+
+7. Testing Container presence : Passed
+
+
+Storage tests failed, please see output for more details.
+
+   at Microsoft.VisualStudio.Services.PowerShell.Cmdlets.TestStorageConnectionCmdlet.ProcessAsync(IVssRequestContext requestContext) in /mnt/_work/1/s/Vssf/SdkTools/PowerShell/Cmdlets/TestStorageConnectionCmdlet.cs:line 319
+   at Microsoft.VisualStudio.Services.PowerShell.Cmdlets.TestStorageConnectionCmdlet.ProcessRecordAsync() in /mnt/_work/1/s/Vssf/SdkTools/PowerShell/Cmdlets/TestStorageConnectionCmdlet.cs:line 222
+   at Microsoft.VisualStudio.Services.Common.TaskExtensions.SyncResult(Task task, SyncResultOptions options) in /mnt/_work/1/s/Vssf/Client/Common/TaskExtensions.cs:line 31
+   at Microsoft.VisualStudio.Services.LightRail.LightRailCmdlet.RunWithActionQueueExecution(Func`1 toRun) in /mnt/_work/1/s/Vssf/SdkTools/PowerShell/Cmdlets/LightRailCmdlet.cs:line 1426
+   at Microsoft.VisualStudio.Services.LightRail.LightRailCmdlet.ProcessRecord() in /mnt/_work/1/s/Vssf/SdkTools/PowerShell/Cmdlets/LightRailCmdlet.cs:line 201
+   at System.Management.Automation.Cmdlet.DoProcessRecord()
+   at System.Management.Automation.CommandProcessor.ProcessRecord()
+at <ScriptBlock>, <No file>: line 1
+at <ScriptBlock>, /LR/Invoke-LightRail.ps1: line 108
+Error: Validation is-valid-blob-storage failed for actions.storage ("Loading image /data/docker-images/actions-console:1de5c59a40dc8658488eb84aff16112a9aadd5a0#sha256:d999a9eaeac6a8b3451c324e5cbf057f966eeefeb490b552abbd10e28b8e004d.tar
+Loaded image: actions-console:1de5c59a40dc8658488eb84aff16112a9aadd5a0
+LR actions> Command in Invoke-LightRail is: Test-StorageConnection -OverrideBlobProvider azure -OverrideConnectionString 'DefaultEndpointsProtocol=https;AccountName=l7xd4arcgitsa01;AccountKey=pFS/g1U48Yr9/TxMuH3+v1djw/k2TsGg+gxxdhrCwDhjSWcwGmzJ+13HJXJ372MVRiKV3GOHaAFO+AStLh1sYA==;EndpointSuffix=core.windows.net' -OverrideAuthenticationType credential
+LR actions> Creating new log file /LR/Logs/Actions_OnPrem_Test-StorageConnection_2023-06-30_02-23-45.log
+LR actions> Test-Storage Connection utility for GitHub Enterprise
+LR actions> Effective remote blob provider with [azure].
+LR actions> Configured Blob provider is : [Microsoft.TeamFoundation.Framework.Hosting.AzureProvider]")
+1 configuration errors
