@@ -19,6 +19,7 @@ Complete the installation: Once the installation is complete, you'll see a messa
 After completing these steps, you should have .NET build tools 2022 installed on your machine. You can now use these tools for building and managing .NET applications. Remember to regularly update your .NET build tools to stay up to date with the latest features and improvements.
 
 
+Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 
 
 To install the WiX Toolset (Windows Installer XML), follow these steps:
