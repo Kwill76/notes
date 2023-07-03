@@ -187,5 +187,7 @@ Caused by: java.net.SocketTimeoutException: Connect timed out
         ... 18 common frames omitted
 
 
+java -jar nexus-iq-cli.jar -i UAID-F2366_GitHubActions -s https://lifecycle.1dc.com -a KuBO2Vii:LWCmuurtbc6oLlCpPo9qoh0H9tyvuRGbEi3dji1IQYiC -t Release C:\Windows\System32\sonatype_test\dst-architect-connect\IDS.Connect
+
 Add-AppxPackage: The 'Add-AppxPackage' command was found in the module 'Appx', but the module could not be loaded due to the following error: [Operation is not supported on this platform. (0x80131539)]
 For more information, run 'Import-Module Appx'.
