@@ -42,3 +42,6 @@ Host key verification failed.
 $GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY = "GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY"
 $GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY_VALUE = "1" 
 $NODE_EXTRA_CA_CERTS_VALUE = "C:\actions-runner-230\10-155-129-230.crt"
+
+
+Set-VMProcessor: Hyper-V was unable to find a virtual machine with name "CD-Runner".
