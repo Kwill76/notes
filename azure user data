@@ -1,0 +1,31 @@
+# Install Git
+Write-Host "Installing Git..."
+$gitInstallerUrl = "https://github.com/git-for-windows/git/releases/download/v2.33.1.windows.1/Git-2.33.1-64-bit.exe"
+$gitInstallerPath = "$env:TEMP\GitInstaller.exe"
+Invoke-WebRequest -Uri $gitInstallerUrl -OutFile $gitInstallerPath -UseBasicParsing
+Start-Process -FilePath $gitInstallerPath -ArgumentList "/SILENT" -Wait
+Write-Host "Git installation completed."
+
+# Install .NET Build Tools 2022
+Write-Host "Installing .NET Build Tools 2022..."
+$dotnetInstallerUrl = "https://download.visualstudio.microsoft.com/download/pr/24e02ec4-4b35-42b9-9675-8fc19050edbb/9a0ae2f10d586141d1d0138c1a1871a6/dotnet-buildtools-2022.1.200/sdk/BuildTools/MSBuild/Current/Bin/SdkSetup.exe"
+$dotnetInstallerPath = "$env:TEMP\DotNetInstaller.exe"
+Invoke-WebRequest -Uri $dotnetInstallerUrl -OutFile $dotnetInstallerPath -UseBasicParsing
+Start-Process -FilePath $dotnetInstallerPath -ArgumentList "--installPath `"$env:ProgramFiles\dotnet-buildtools-2022`"" -Wait
+Write-Host ".NET Build Tools 2022 installation completed."
+
+# Install WiX Toolset
+Write-Host "Installing WiX Toolset..."
+$wixInstallerUrl = "https://github.com/wixtoolset/wix3/releases/download/wix3112rtm/wix311-binaries.zip"
+$wixInstallerPath = "$env:TEMP\WixInstaller.zip"
+Invoke-WebRequest -Uri $wixInstallerUrl -OutFile $wixInstallerPath -UseBasicParsing
+Expand-Archive -Path $wixInstallerPath -DestinationPath "$env:ProgramFiles\WiX" -Force
+Write-Host "WiX Toolset installation completed."
+
+# Install Docker
+Write-Host "Installing Docker..."
+Invoke-WebRequest -Uri "https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe" -OutFile "$env:TEMP\DockerInstaller.exe" -UseBasicParsing
+Start-Process -Wait -FilePath "$env:TEMP\DockerInstaller.exe" -ArgumentList "--quiet"
+Write-Host "Docker installation completed."
+
+Write-Host "All installations completed."
