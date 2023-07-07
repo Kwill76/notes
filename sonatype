@@ -1,0 +1,113 @@
+exus accessible to our service account.
+
+All that is required in nexus. AD group archana requested for was wrong.
+
+Brian sheperd has created service account but Archana provided the wrong AD group that was attached to our servcie.
+
+The AD group linked to our service account is wrong.
+
+We need to provide right AD group to sheperd 
+Install VScode 2022 on the runner!
+
+
+Sonatype/Fortify
+
+I've made inquiry from the DAST and Sonatype lifecyle support team Fortify and Sonatype uses stantartd HTTPS over 443, and 
+the both fortify and Sonatype DNS is returns their respective IP address so I need to make sure that NAT works and I've 
+already open a Tufin request for that below.
+
+Subject: Sonatype and Fortify NAT Request
+Workflow name: Global NAT Request
+Ticket ID: 211720
+Requester: Ajilore, Olanrewaju, F4UOW3R
+Priority: High
+
+Fortify SCA (sharepoint.com)
+Sonatype Lifecycle (sharepoint.com)
+[1:09 PM] Ajilore, Olanrewaju (Alpharetta)
+
+AppSec Wiki (sharepoint.com)
+Tutorial for running Fortify SCA and Sonatype - LATAM - Confluence Enterprise (onefiserv.net)
+
+
+lifecycle.com will take me to sonatype and fortify UI and check application, press GIT, it will give me my UAID.
+
+use below command to connect and verify GHE runner with sonatype.
+
+java -jar nexus-iq-cli.jar -i UAID-F2366_GitHubActions -s https://lifecycle.1dc.com -a KuBO2Vii:LWCmuurtbc6oLlCpPo9qoh0H9tyvuRGbEi3dji1IQYiC -t Release C:\Windows\System32\sonatype_test\dst-architect-connect\IDS.Connec
+
+
+Dependencies required 
+Java
+sonatype - Olan already downloaded all required dependencies to ensure connectivity.
+
+
+
+Subject: Sonatype and Fortify NAT Request
+Workflow name: Global NAT Request
+Ticket ID: 211857
+Requester: Olabiyi, Kolawole, F409SKT
+Priority: High
+
+Details: The request has been opened.
+
+This is system generated email and should not be used for replies and queries. 
+
+
+
+			Sonatype firewall requests:
+
+If the application system is in an oFS domain two ​firewall requests are required: 1 to open the connection on the oFS side 
+(Service Now), and 1 for the oFDC side (Tufin).If the application system is in an oFDC domain only Onefin is required.
+
+Use nslookup <hostname> to determine the ip source address of my server and destination hostname to determine the destination
+address on firewall requests.
+
+Sonatype Lifecycle: UAID-05591
+
+
+Service Now Requests
+Destination Addresses​
+The Destination Addresses and Service information are listed below.
+
+​Sonatype ​​Lifecycle​:
+
+11.165.232.91/32 (TCP 443)​
+
+​Source ​Addresses
+
+​Use the command​ "nslookup <hostname>" to determine the IP address of your server.
+This will be the 10.x.x.x address to submit.​
+
+
+Command to run the runner server for integration after connectivity has been established!!!
+
+java -jar nexus-iq-cli.jar -i UAID-F2366_GitHubActions -s https://lifecycle.1dc.com -a KuBO2Vii:LWCmuurtbc6oLlCpPo9qoh0H9tyvuRGbEi3dji1IQYiC -t Release C:\Windows\System32\sonatype_test\dst-architect-connect\IDS.Connect
+
+current error without NAT global.
+
+PS C:\Users\sysnt> java -jar nexus-iq-cli.jar -i UAID-F2366_GitHubActions -s https://lifecycle.1dc.com -a KuBO2Vii:LWCmuurtbc6oLlCpPo9qoh0H9tyvuRGbEi3dji1IQYiC -t Release C:\Windows\System32\sonatype_test\dst-architect-connect\IDS.Connect
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/C:/Users/sysnt/nexus-iq-cli.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[INFO] Validating IQ Server version https://lifecycle.1dc.com...
+
+Pre-requirements
+JDK 8
+JDK 11 or more
+Access in Software Center
+Access in SSC Portal (https://fortify.1dc.com)
+Access in Lifecycle Portal (https://lifecycle.1dc.com)
+fortify-sca.bat
+fortify-sonatype.bat
+
+
+
+
+Sonatype - Nexus repository manager for hosting and mnaging software artifacts! It wil help us maintain centralized artifact mgt.
+		   It analyzes components for security vulnerabilities, licensing compliance, and other risk factors.
+		
+Fortify - It also helps us identify and address security vulnerabilities in Architect! basically to enhance the security of our
+		  our application and reduce risk risk of security breaches. (offered by Micro focus)
