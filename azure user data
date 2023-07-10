@@ -39,3 +39,4 @@ docker push docker-team2.artifactory.bank.onefiserv.net/architect/ nginx:1.0.0
 
 docker login docker-team2.artifactory.bank.onefiserv.net
 
+An image does not exist locally with the tag: docker-team2.artifactory.bank.onefiserv.net/nginx
