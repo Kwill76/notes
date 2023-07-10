@@ -32,3 +32,6 @@ Write-Host "All installations completed."
 
 
 WARNING: Could not load file or assembly 'Windows.Devices.Printers.Extensions.dll' or one of its dependencies. The module was expected to contain an assembly manifest.
+
+
+docker pull docker.artifactory.bank.onefiserv.net/architect/<package_name>:<docker_tag>
