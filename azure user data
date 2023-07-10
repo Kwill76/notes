@@ -36,3 +36,6 @@ WARNING: Could not load file or assembly 'Windows.Devices.Printers.Extensions.dl
 
 docker pull docker.artifactory.bank.onefiserv.net/architect/<package_name>:<docker_tag>
 docker push docker-team2.artifactory.bank.onefiserv.net/architect/ nginx:1.0.0
+
+docker login docker-team2.artifactory.bank.onefiserv.net
+
